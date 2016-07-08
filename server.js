@@ -7,10 +7,11 @@ const port = process.env.PORT || 3000;
 
 //Ensure address is using HTTP and not HTTPS (App will not work with HTTPS)
 app.use(function (req, response, next) {
-  if (req.headers['x-forwarded-proto'] === 'http') {
-    next();
-  } else {
+  if (req.headers['x-forwarded-proto'] === 'https') {
     response.redirect('http://' + req.hostname + req.url);
+
+  } else {
+    next(); 
   }
 });
 
