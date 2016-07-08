@@ -4,7 +4,8 @@ var React = require('react');
 //Only define the render method and contain no states
 var About = (props) => {
   return (
-    <h3>About components</h3>
+    <h3>About</h3>
+    <p>Welcome to the about page</p>
   );
 }
 
